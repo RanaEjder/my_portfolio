@@ -1,13 +1,13 @@
 {
-  "name": "boilerplate",
+  "name": "rana-portfolio",
   "version": "1.0.0",
-  "description": "This is a boilerplate",
+  "description": "This is Rana's Portfolio",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "rm -rf dist && parcel build src/index.html --public-url ./",
     "publish": "gh-pages -d dist"
   },
-  "author": "dci",
+  "author": "Rana Aslan",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",

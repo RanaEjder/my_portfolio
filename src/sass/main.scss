@@ -1,8 +1,315 @@
-// @import "base";
-// You need the base only when you are not using bootstrap. In that case, go to _base.scss
-// to customize it as you may want.
+@import "base";
 
-@import "variables";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+main {
+  display: flex;
+  flex-direction: column;
+}
+hr {
+  margin: 5rem auto;
+  background-color: #6f2dbd;
+  border: none;
+  width: 50rem;
+  height: 1px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
 
-// Write your sass code here or import partials
+ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  display: inline;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #6f2dbd;
+  font-size: 2rem;
+  font-family: "Coming Soon", cursive;
+}
+
+nav a:hover {
+  font-weight: bolder;
+  background-color: #6f2dbd;
+  color: black;
+}
+
+.home {
+  height: 90vh;
+  background-color: black;
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6f2dbd;
+}
+
+.animation-container {
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bank,
+.dev {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bank-item img,
+.dev-item img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.bank-item,
+.dev-item {
+  background-color: #6f2dbd;
+  position: absolute;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bank-item {
+  animation-name: top-down;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.bank-item:first-child,
+.dev-item:first-child {
+  z-index: 5;
+}
+.bank-item:nth-child(2),
+.dev-item:nth-child(2) {
+  z-index: 4;
+  animation-delay: 1s;
+}
+.bank-item:nth-child(3),
+.dev-item:nth-child(3) {
+  z-index: 3;
+  animation-delay: 2s;
+}
+.bank-item:nth-child(4),
+.dev-item:nth-child(4) {
+  z-index: 2;
+  animation-delay: 3s;
+}
+
+.bank-item:nth-child(5),
+.dev-item:nth-child(5) {
+  z-index: 1;
+  animation-delay: 4s;
+}
+
+@keyframes top-down {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-150%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  75% {
+    transform: translateY(-150%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+}
+
+.dev-item {
+  animation-name: right-left;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes right-left {
+  0% {
+    transform: translate(150%);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(50%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(150%);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(200%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(250%);
+    opacity: 0;
+  }
+}
+
+.home p span {
+  font-family: "Rubik Burned", cursive;
+  font-size: 3.5rem;
+}
+
+.home h1 {
+  font-size: 3rem;
+}
+
+.home p {
+  font-size: 3rem;
+}
+.about,
+.works,
+.contact {
+  height: 100vh;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+
+  color: #6f2dbd;
+  font-size: 2.5rem;
+  font-family: "Coming Soon", cursive;
+}
+
+.about h2 {
+  margin: 0 auto;
+}
+.about p {
+  padding: 2rem 25rem;
+}
+
+.about p::first-letter {
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.about p::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f138";
+}
+
+.works {
+  font-size: 1.5rem;
+
+  text-align: center;
+  color: #6f2dbd;
+}
+
+.works-container {
+  display: flex;
+}
+
+.cards {
+  width: 25rem;
+  height: 35rem;
+  border: 1px solid;
+  margin: 10rem auto;
+  background: rgb(221, 221, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(221, 221, 221, 1) 0%,
+    rgba(111, 45, 189, 1) 100%
+  );
+  color: black;
+}
+.cards h3 {
+  font-family: "Rubik Burned", cursive;
+  font-size: 2rem;
+}
+.cards img {
+  width: 200px;
+  height: 200px;
+  margin: 1rem 0;
+}
+.cards p {
+  text-align: left;
+  margin: 0.9rem 2.5rem;
+}
+.contact {
+  color: #6f2dbd;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.contact h2 {
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: flex;
+  margin-top: 10rem;
+  justify-content: space-evenly;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+}
+
+.info p,
+.info a,
+.info iframe {
+  padding: 1rem;
+}
+input,
+textarea {
+  width: 20rem;
+  background-color: black;
+  border: #6f2dbd 1px solid;
+  margin-bottom: 0.5rem;
+}
+::placeholder {
+  color: #6f2dbd;
+}
+
+input {
+  height: 2rem;
+}
+
+button {
+  width: 10rem;
+  height: 2rem;
+  color: #6f2dbd;
+  font-size: 1.5rem;
+  background-color: black;
+}
+
+footer {
+  color: #6f2dbd;
+  padding: 1rem;
+  text-align: end;
+}
