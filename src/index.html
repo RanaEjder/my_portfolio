@@ -16,6 +16,7 @@
     ></script>
     <link rel="stylesheet" href="sass/main.scss" />
     <title>Rana Aslan</title>
+    <link rel="icon" type="image/x-icon" href="../images/frog-solid.svg" />
   </head>
   <body>
     <header>
@@ -35,6 +36,25 @@
           </li>
         </ul>
       </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars submenu" id="menu-btn">
+          <ul>
+            <li>
+              <a href="#s1">Home</a>
+            </li>
+            <li>
+              <a href="#s2">About</a>
+            </li>
+            <li>
+              <a href="#s3">Works</a>
+            </li>
+            <li>
+              <a href="#s4">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -50,7 +70,7 @@
             <div class="bank-item">
               <img src="../images/denizbank.png" alt="" />
             </div>
-            <div class="bank-item"></div>
+
             <div class="bank-item">
               <img src="../images/money.jpg" alt="" />
             </div>
@@ -68,9 +88,6 @@
             <div class="dev-item">
               <img src="../images/bootstrap.jpeg" alt="" />
             </div>
-            <div class="dev-item">
-              <img src="../images/dev1.jpg" alt="" />
-            </div>
           </div>
         </div>
         <div>
@@ -82,23 +99,27 @@
           />
         </div>
 
-        <p>Hi there, I'am <span>Rana</span>!</p>
+        <p>Hi there, I'm <span>Rana</span>!</p>
         <p>Full Stack Web Developer,</p>
         <p>with banking background.</p>
       </section>
       <hr />
       <section class="about" id="s2">
         <h2>WHO IS RANA?</h2>
-        <p>I'm a Full Stack Web Developer based in Frankfurt am Main.</p>
-        <p>
-          My mission is to build responsive, accessible, reuseable and dry web
-          pages with animations and UI effects.
-        </p>
-        <p>I'm a team worker, problem solver and solution orientated person.</p>
+        <div class="text">
+          <p>I'm a Full Stack Web Developer based in Frankfurt am Main.</p>
+          <p>
+            My mission is to build responsive, accessible, reuseable and DRY web
+            pages with animations and UI effects.
+          </p>
+          <p>
+            I'm a team worker, problem solver and solution orientated person.
+          </p>
+        </div>
       </section>
       <hr />
       <section class="works" id="s3">
-        <h2>WORKS</h2>
+        <h2>WORKS / INTERESTS (for now...)</h2>
         <div class="works-container">
           <div class="cards">
             <img src="../images/cat.jpg" alt="cat" />
@@ -147,6 +168,22 @@
             </p>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
+          <div class="cards">
+            <img src="../images/cooking.jpg" alt="cooking" />
+            <h3>Cooking</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,
+              inventore adipisci.
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. A enim
+              reiciendis similique? Commodi, ipsa?
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium magnam cum quae.
+            </p>
+          </div>
         </div>
       </section>
       <hr />
@@ -161,10 +198,9 @@
 
               <textarea
                 name="textarea"
-                id=""
                 cols="30"
                 rows="10"
-                placeholder="What do you want to ask something?"
+                placeholder="Want to ask something?"
               ></textarea>
               <button type="submit">Shoot!</button>
             </form>
@@ -198,6 +234,9 @@
           </div>
         </div>
       </section>
+      <div class="go-to">
+        <a href=".home"><i class="fa-solid fa-angles-up"></i></a>
+      </div>
       <hr />
     </main>
     <footer>

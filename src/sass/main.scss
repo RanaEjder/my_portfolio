@@ -8,7 +8,7 @@ hr {
   margin: 5rem auto;
   background-color: #6f2dbd;
   border: none;
-  width: 50rem;
+  width: 50%;
   height: 1px;
 }
 nav {
@@ -32,7 +32,7 @@ li {
 a {
   text-decoration: none;
   color: #6f2dbd;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: "Coming Soon", cursive;
 }
 
@@ -41,9 +41,49 @@ nav a:hover {
   background-color: #6f2dbd;
   color: black;
 }
+.icons div {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: 0.5rem;
+  color: #6f2dbd;
+  background-color: black;
+  font-size: 2rem;
+  margin: 0.3rem;
+  cursor: pointer;
+  text-align: center;
+}
 
+.submenu {
+  position: relative;
+}
+
+.submenu ul {
+  list-style-type: none;
+  width: 10rem;
+  background-color: black;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: none;
+}
+
+.submenu:hover ul {
+  display: block;
+}
+
+.submenu a:hover {
+  color: black;
+  background-color: #6f2dbd;
+}
+
+h2,
+p {
+  font-size: 3rem;
+}
 .home {
-  height: 90vh;
+  width: 100%;
+  height: auto;
   background-color: black;
   font-family: "Orbitron", sans-serif;
   display: flex;
@@ -79,7 +119,6 @@ nav a:hover {
 
 .bank-item,
 .dev-item {
-  background-color: #6f2dbd;
   position: absolute;
   opacity: 1;
   display: flex;
@@ -88,8 +127,8 @@ nav a:hover {
 }
 
 .bank-item {
-  animation-name: top-down;
-  animation-duration: 5s;
+  animation-name: out;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 
@@ -113,31 +152,25 @@ nav a:hover {
   animation-delay: 3s;
 }
 
-.bank-item:nth-child(5),
-.dev-item:nth-child(5) {
-  z-index: 1;
-  animation-delay: 4s;
-}
-
-@keyframes top-down {
+@keyframes out {
   0% {
-    transform: translateY(0%);
-    opacity: 1;
+    transform: translateY(200%);
+    opacity: 0.2;
   }
   25% {
-    transform: translateY(-150%);
+    transform: translateY(150%);
     opacity: 1;
   }
   50% {
-    transform: translateY(150%);
-    opacity: 0;
+    transform: translateY(100%);
+    opacity: 1;
   }
   75% {
-    transform: translateY(-150%);
+    transform: translateY(50%);
     opacity: 1;
   }
   100% {
-    transform: translateY(150%);
+    transform: translate(-150%);
     opacity: 0;
   }
 }
@@ -180,32 +213,29 @@ nav a:hover {
   font-size: 3.5rem;
 }
 
-.home h1 {
-  font-size: 3rem;
-}
-
-.home p {
-  font-size: 3rem;
-}
 .about,
 .works,
 .contact {
-  height: 100vh;
+  height: a;
 }
 .about {
   display: flex;
   flex-direction: column;
 
   color: #6f2dbd;
-  font-size: 2.5rem;
   font-family: "Coming Soon", cursive;
 }
 
-.about h2 {
-  margin: 0 auto;
+.about h2,
+.text {
+  margin: 3rem auto;
 }
-.about p {
-  padding: 2rem 25rem;
+
+.text {
+  width: 60%;
+}
+.text p {
+  padding: 2rem 0;
 }
 
 .about p::first-letter {
@@ -220,21 +250,21 @@ nav a:hover {
 }
 
 .works {
-  font-size: 1.5rem;
-
   text-align: center;
   color: #6f2dbd;
 }
 
 .works-container {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 .cards {
   width: 25rem;
-  height: 35rem;
+  height: auto;
   border: 1px solid;
-  margin: 10rem auto;
+  margin: 5rem 3rem;
   background: rgb(221, 221, 221);
   background: linear-gradient(
     90deg,
@@ -242,6 +272,9 @@ nav a:hover {
     rgba(111, 45, 189, 1) 100%
   );
   color: black;
+  box-shadow: 28px 42px 20px rgba(112, 45, 189, 0.5);
+  -webkit-box-shadow: 28px 42px 20px rgba(112, 45, 189, 0.5);
+  -moz-box-shadow: 28px 42px 20px rgba(112, 45, 189, 0.5);
 }
 .cards h3 {
   font-family: "Rubik Burned", cursive;
@@ -252,9 +285,15 @@ nav a:hover {
   height: 200px;
   margin: 1rem 0;
 }
+
 .cards p {
+  font-size: 1.5rem;
   text-align: left;
   margin: 0.9rem 2.5rem;
+}
+
+.cards:hover {
+  transform: scale(1.5);
 }
 .contact {
   color: #6f2dbd;
@@ -276,8 +315,13 @@ nav a:hover {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
 .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info p,
@@ -291,7 +335,19 @@ textarea {
   background-color: black;
   border: #6f2dbd 1px solid;
   margin-bottom: 0.5rem;
+  color: #6f2dbd;
 }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #6f2dbd;
+  -webkit-box-shadow: 0 0 0 30px black inset !important;
+}
+input:focus,
+textarea:focus {
+  outline: 2px solid #6f2dbd;
+  cursor: pointer;
+}
+
 ::placeholder {
   color: #6f2dbd;
 }
@@ -301,10 +357,77 @@ input {
 }
 
 button {
+  margin-top: 3rem;
   width: 10rem;
-  height: 2rem;
-  color: #6f2dbd;
+  height: 3.5rem;
   font-size: 1.5rem;
+  font-weight: bold;
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 2.781);
+  --btn-color: #6f2dbd;
+  border: solid 0.25rem var(--glow-color);
+
+  color: var(--glow-color);
+  background-color: var(--btn-color);
+  border-radius: 1rem;
+  outline: none;
+  box-shadow: 0 0 1rem 0.25rem var(--glow-color),
+    0 0 3rem 1rem var(--glow-spread-color),
+    inset 0 0 0.75rem 0.25rem var(--glow-color);
+  text-shadow: 0 0 0.5rem var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
+button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2rem);
+  opacity: 0.7;
+  transform: perspective(1.5rem) rotateX(35deg) scale(1, 0.6);
+}
+
+button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1rem 0.25rem var(--glow-color),
+    0 0 3rem 1rem var(--glow-color), inset 0 0 0.75rem 0.25rem var(--glow-color);
+}
+
+button:active {
+  box-shadow: 0 0 0.6rem 0.25rem var(--glow-color),
+    0 0 2.5rem 2rem var(--glow-spread-color),
+    inset 0 0 0.5rem 0.25rem var(--glow-color);
+}
+
+.go-to {
+  position: fixed;
+  right: 2rem;
+  bottom: 10rem;
+  z-index: 50;
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+}
+
+.go-to i {
+  color: #6f2dbd;
+  font-size: 4rem;
+}
+
+.go-to i:hover {
+  backdrop-filter: blur(10px);
+  filter: blur(4px);
+  transition: 0.5s ease;
+}
+
+.go-to:hover {
   background-color: black;
 }
 
@@ -312,4 +435,71 @@ footer {
   color: #6f2dbd;
   padding: 1rem;
   text-align: end;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    display: none;
+  }
+  h2,
+  p {
+    font-size: 1.5rem;
+  }
+
+  .animation-container {
+    width: 6rem;
+    height: 6rem;
+  }
+  .contact-container {
+    flex-direction: column-reverse;
+    margin: 2rem auto;
+  }
+
+  form {
+    margin-top: 3rem;
+  }
+
+  .go-to {
+    right: 3rem;
+    bottom: 6rem;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .go-to i {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    display: none;
+  }
+
+  h2,
+  p {
+    font-size: 2.2rem;
+  }
+
+  .animation-container {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .go-to {
+    right: 4rem;
+    bottom: 8rem;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .go-to i {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .icons {
+    display: none;
+  }
 }
