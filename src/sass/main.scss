@@ -15,13 +15,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: 15vh;
 }
 
 .logo {
+  background-color: #6f2dbd;
   position: fixed;
-  left: 30px;
-  top: 0;
+  left: 15px;
+  top: 15px;
 }
 
 ul {
@@ -47,6 +48,7 @@ nav a:hover {
   background-color: #6f2dbd;
   color: black;
 }
+
 .icons div {
   height: 5rem;
   width: 5rem;
@@ -81,6 +83,12 @@ nav a:hover {
 .submenu a:hover {
   color: black;
   background-color: #6f2dbd;
+}
+.logo1 {
+  background-color: #6f2dbd;
+  position: fixed;
+  right: 15px;
+  top: 15px;
 }
 
 h2,
@@ -448,6 +456,7 @@ footer {
   nav {
     display: none;
   }
+
   h2,
   p {
     font-size: 1.5rem;
